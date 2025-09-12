@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Godlove Nyathi, a Full-Stack Developer, Cyber Security Analyst, and Network Engineer based in Johannesburg.">
+  <meta name="keywords" content="Full-Stack Developer, Cyber Security Analyst, Network Engineer, Johannesburg, Web Development, Cybersecurity">
+  <meta property="og:title" content="Godlove Nyathi - Portfolio">
+  <meta property="og:description" content="Portfolio of Godlove Nyathi, showcasing full-stack development, cybersecurity and network engineering projects">
+  <title>Godlove Nyathi - Portfolio</title>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" as="style">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #2980b9;
+      --dark-color: #1a1a2e;
+      --light-color: #16213e;
+      --accent-color: #88B04B; /* Updated to match the innovation gradient */
+      --text-color: #f1f1f1;
+      --text-light: #ffffff;
+      --card-bg: #0f3460;
+      --transition: all 0.3s ease;
+      --network-color: #4d5df9;
+      --it-color: #2dd4bf;
+      --cyber-color: #f472b6;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--dark-color);
+      transition: var(--transition);
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--primary-color);
+      color: white;
+      padding: 8px;
+      z-index: 100;
+      transition: top 0.3s;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    h1, h2, h3, h4 {
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: var(--text-light);
+    }
+    
+    .innovation-gradient {
+      background: linear-gradient(90deg, #6193ff, #6B5B95, #88B04B);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--primary-color);
+      transition: var(--transition);
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: var(--text-light);
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 600;
+      margin: 0.5rem;
+    }
+
+    .btn:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    section {
+      padding: 5rem 10%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Navigation */
+    .main-nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(26, 26, 46, 0.9);
+      z-index: 1000;
+      padding: 1rem 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: var(--text-light);
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .nav-links a.active {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      background: linear-gradient(135deg, var(--dark-color) 0%, var(--light-color) 100%);
+      color: var(--text-light);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      flex: 1;
+      min-width: 300px;
+      z-index: 2;
+    }
+
+    /* Typewriter styles */
+    .typewriter-container {
+      margin: 1.5rem 0;
+      min-height: 4.5rem;
+    }
+
+    .typewriter-text {
+      font-size: 1.8rem;
+      font-weight: 600;
+      background: linear-gradient(90deg, var(--network-color), var(--it-color), var(--cyber-color));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+      position: relative;
+    }
+
+    .typewriter-text::after {
+      content: "|";
+      position: absolute;
+      right: -8px;
+      color: var(--text-light);
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* About Section */
+    .about {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      background-color: var(--dark-color);
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+      padding-right: 2rem;
+    }
+
+    /* Projects Section */
+    .projects {
+      background: linear-gradient(135deg, var(--light-color) 0%, var(--dark-color) 100%);
+      color: var(--text-light);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      padding: 2rem;
+      transition: var(--transition);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--primary-color);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .project-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    /* Skills Section */
+    .skills-section {
+      background-color: var(--dark-color);
+    }
+
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .skill-category {
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: var(--transition);
+    }
+
+    .skill-category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .skill-category h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 0.5rem;
+    }
+
+    /* ===== START: NEW CSS FOR REFERENCES SECTION ===== */
+    .references {
+        background: linear-gradient(135deg, var(--dark-color) 0%, var(--light-color) 100%);
+    }
+
+    .reference-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .reference-card {
+        background-color: var(--card-bg);
+        border-radius: 10px;
+        padding: 2rem;
+        text-align: center;
+        transition: var(--transition);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        border-top: 5px solid var(--primary-color);
+    }
+    
+    .reference-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+    
+    .ref-icon {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .ref-name {
+        font-size: 1.25rem;
+        color: var(--text-light);
+        margin-bottom: 0.5rem;
+    }
+
+    .ref-title {
+        color: var(--text-color);
+        margin-bottom: 1rem;
+    }
+
+    .ref-contact {
+        color: var(--primary-color);
+        font-weight: 600;
+        word-break: break-all;
+    }
+
+    .ref-contact i {
+        margin-right: 0.5rem;
+    }
+    /* ===== END: NEW CSS FOR REFERENCES SECTION ===== */
+
+    /* Contact Section */
+    .contact {
+      background: linear-gradient(135deg, var(--dark-color) 0%, var(--light-color) 100%);
+      color: var(--text-light);
+    }
+
+    .contact-form {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      margin: 2rem auto;
+    }
+
+    input, textarea {
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid #333;
+      border-radius: 5px;
+      font-family: inherit;
+      background-color: var(--card-bg);
+      color: var(--text-color);
+      transition: var(--transition);
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.3);
+    }
+
+    textarea {
+      min-height: 150px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .social-links a {
+      font-size: 1.8rem;
+      color: var(--text-light);
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      color: var(--accent-color);
+      transform: translateY(-3px);
+    }
+
+    .contact-info {
+      text-align: center;
+      margin: 1rem 0;
+    }
+
+    .contact-info p {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    /* Resume Section */
+    .resume {
+      text-align: center;
+      background-color: var(--dark-color);
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 3rem auto;
+      padding-left: 50px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 25px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--primary-color);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -38px;
+      top: 5px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--primary-color);
+      border: 3px solid var(--dark-color);
+    }
+
+    .timeline-date {
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    /* Page Content */
+    .page-content {
+      display: none;
+      padding: 6rem 10% 2rem;
+      min-height: 100vh;
+    }
+
+    .page-content.active {
+      display: block;
+    }
+
+    /* Detailed About Page */
+    .about-page {
+      background-color: var(--dark-color);
+    }
+
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .about-text-detailed {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+      position: relative;
+    }
+
+    .about-image img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      transition: var(--transition);
+    }
+
+    /* Enhanced profile image styling */
+    .profile-illustration {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--primary-color);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      margin-bottom: 2rem;
+      transition: var(--transition);
+    }
+
+    /* New styling for enhanced profile image */
+    .enhanced-profile {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid transparent;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color)) border-box;
+      box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.3),
+        0 0 0 10px rgba(15, 52, 96, 0.5);
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 2;
+      transition: var(--transition);
+    }
+
+    .enhanced-profile:hover {
+      transform: scale(1.05);
+      box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 0 10px rgba(15, 52, 96, 0.5);
+    }
+
+    /* Decorative elements for the profile image */
+    .profile-decoration {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .decoration-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+      opacity: 0.2;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .circle-1 {
+      width: 80px;
+      height: 80px;
+      top: -20px;
+      right: -10px;
+      animation-delay: 0s;
+    }
+
+    .circle-2 {
+      width: 60px;
+      height: 60px;
+      bottom: -15px;
+      left: -15px;
+      animation-delay: 1s;
+    }
+
+    .circle-3 {
+      width: 40px;
+      height: 40px;
+      top: 50%;
+      right: -20px;
+      animation-delay: 2s;
+    }
+
+    /* Tech icons floating around profile */
+    .tech-icons {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .tech-icon {
+      position: absolute;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      animation: floatAround 15s linear infinite;
+    }
+
+    .icon-1 {
+      top: 10%;
+      left: 5%;
+      animation-delay: 0s;
+    }
+
+    .icon-2 {
+      top: 20%;
+      right: 10%;
+      animation-delay: 2s;
+    }
+
+    .icon-3 {
+      bottom: 15%;
+      left: 15%;
+      animation-delay: 4s;
+    }
+
+    .icon-4 {
+      bottom: 5%;
+      right: 5%;
+      animation-delay: 6s;
+    }
+
+    @keyframes floatAround {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      25% {
+        transform: translateY(-20px) rotate(5deg);
+      }
+      50% {
+        transform: translateY(0) rotate(0deg);
+      }
+      75% {
+        transform: translateY(20px) rotate(-5deg);
+      }
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+    }
+
+    .skills-highlights {
+      background-color: var(--card-bg);
+      padding: 2rem;
+      border-radius: 10px;
+      margin: 2rem 0;
+    }
+
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .skill-item {
+      background-color: var(--light-color);
+      padding: 1rem;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+    }
+
+    .skill-item:hover {
+      transform: translateX(5px);
+      background-color: var(--primary-color);
+    }
+
+    .skill-item:hover i {
+      color: white;
+    }
+
+    .skill-item i {
+      color: var(--primary-color);
+      transition: var(--transition);
+    }
+
+    /* Back Button */
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .fade-in.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    /* Tech Stack */
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .tech-item {
+      background-color: var(--card-bg);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      section, .page-content {
+        padding: 3rem 5%;
+      }
+
+      .main-nav {
+        padding: 1rem 5%;
+      }
+
+      .hero, .about {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-text {
+        padding-right: 0;
+        margin-bottom: 2rem;
+      }
+
+      .project-grid, .skills-container, .reference-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline {
+        padding-left: 30px;
+      }
+
+      .timeline::before {
+        left: 15px;
+      }
+
+      .timeline-item::before {
+        left: -28px;
+      }
+
+      .about-content {
+        flex-direction: column;
+      }
+      
+      .about-image {
+        order: -1;
+      }
+      
+      .typewriter-text {
+        font-size: 1.5rem;
+      }
+      
+      .enhanced-profile {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav class="main-nav">
+    <a href="#" class="logo innovation-gradient">Godlove Nyathi</a>
+    <div class="nav-links">
+      <a href="#home" class="nav-link active" data-page="home">Home</a>
+      <a href="#about" class="nav-link" data-page="about">About</a>
+      <a href="#skills" class="nav-link" data-page="skills">Skills</a>
+      <a href="#projects" class="nav-link" data-page="projects">Projects</a>
+      <a href="#resume" class="nav-link" data-page="resume">Resume</a>
+      <a href="#references" class="nav-link" data-page="references">References</a>
+      <a href="#contact" class="nav-link" data-page="contact">Contact</a>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <section id="home" class="hero page-content active">
+      <div class="hero-content">
+        <img src="profile.jpg" alt="Godlove Nyathi" class="profile-illustration fade-in">
+        <h1 class="fade-in innovation-gradient">Godlove Nyathi</h1>
+        
+        <div class="typewriter-container fade-in">
+          <h2 class="typewriter-text" id="typewriter"></h2>
+        </div>
+        
+        <p class="fade-in">Building secure, scalable networks and applications with a focus on performance and security.</p>
+        
+        <div class="tech-stack fade-in">
+          <div class="tech-item">
+            <i class="fab fa-cisco"></i>
+            <span>Cisco CCNA</span>
+          </div>
+          <div class="tech-item">
+            <i class="fas fa-shield-alt"></i>
+            <span>Cyber Security</span>
+          </div>
+          <div class="tech-item">
+            <i class="fab fa-python"></i>
+            <span>Python</span>
+          </div>
+          <div class="tech-item">
+            <i class="fas fa-network-wired"></i>
+            <span>Network Engineering</span>
+          </div>
+        </div>
+        
+        <div class="fade-in">
+          <a href="#projects" class="btn" data-page="projects">View My Work</a>
+          <a href="#contact" class="btn" data-page="contact">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about page-content">
+      <div class="about-text fade-in">
+        <h2>About Me</h2>
+        <p> Junior IT Technician|Network Engineer with a strong foundation in networking and
+device configuration. Recently obtained my CCNA certification in just 3 months,
+demonstrating a fast-learning ability and dedication to advancing my skills. Proficient
+in networking protocols, operating system specifications, and network engineering.
+Eager to continue expanding my knowledge and contribute to the success of users,
+teams, and businesses by quickly mastering new processes, programs, and
+procedures.</p><br>  <p> Experienced in both academic and hands-on environments, I have contributed to projects involving network troubleshooting, device setups, and user support during my internship roles. My exposure to tools like Cisco Packet Tracer, real-world routing/switching, and platforms such as Moodle has equipped me with the practical skills needed to thrive in dynamic IT environments.   <p>
+          As a dedicated and adaptable professional, I am committed to continuous learning, currently pursuing cloud certifications while aiming to specialize further in cybersecurity and ethical hacking. .
+        </p>
+        <a href="#about-detailed" class="btn" id="detailed-about-btn">Read More About Me</a>
+      </div>
+    </section>
+
+    <section id="about-detailed" class="about-page page-content">
+      <a href="#about" class="btn back-btn"><i class="fas fa-arrow-left"></i> Back to About</a>
+      <h2 class="fade-in">My Journey</h2>
+      
+      <div class="about-content">
+        <div class="about-text-detailed fade-in">
+          <p>I'm a passionate IT professional with a diverse skill set spanning network engineering, cybersecurity, and full-stack development. My journey in technology began with a deep curiosity about how systems work and how they can be secured.</p>
+          
+          <p>As a Junior IT Technician and Network Engineer, I've built a strong foundation in networking and device configuration. My recent achievement of obtaining the CCNA certification in just 3 months demonstrates my fast-learning ability and dedication to advancing my skills.</p>
+          <br>
+          
+          <p>I'm proficient in networking protocols, operating system specifications, and network engineering. My experience ranges from academic environments to hands-on roles where I've contributed to projects involving network troubleshooting, device setups, and user support.</p>
+          
+          <p>What drives me is the constant evolution of technology and the challenge of staying ahead in cybersecurity. I'm currently expanding my knowledge in cloud technologies while working toward specialization in cybersecurity and ethical hacking.</p>
+          <br>
+
+          <h3>Professional Philosophy</h3>
+          <p>I believe in continuous learning and adaptation in the fast-evolving tech landscape. My approach combines technical expertise with problem-solving skills to deliver secure, efficient solutions.</p>
+          
+          <p>Whether it's designing robust networks, securing systems from vulnerabilities, or developing applications with security in mind from the start, I'm committed to excellence in every project I undertake.</p>
+        </div>
+        
+        <div class="about-image fade-in">
+          <div class="profile-decoration">
+            <div class="decoration-circle circle-1"></div>
+            <div class="decoration-circle circle-2"></div>
+            <div class="decoration-circle circle-3"></div>
+          </div>
+          
+          <div class="tech-icons">
+            <i class="fab fa-cisco tech-icon icon-1"></i>
+            <i class="fas fa-shield-alt tech-icon icon-2"></i>
+            <i class="fas fa-code tech-icon icon-3"></i>
+            <i class="fas fa-network-wired tech-icon icon-4"></i>
+          </div>
+          
+          <img src="profile2.jpg" alt="Godlove Nyathi profile illustration" class="enhanced-profile" loading="lazy">
+        </div>
+      </div>
+      
+      <div class="skills-highlights fade-in">
+        <h3>Technical Proficiencies</h3>
+        <div class="skills-list">
+          <div class="skill-item">
+            <i class="fas fa-network-wired"></i>
+            <span>Network Engineering</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-shield-alt"></i>
+            <span>Cybersecurity</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-server"></i>
+            <span>System Administration</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-code"></i>
+            <span>Full-Stack Development</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-cloud"></i>
+            <span>Cloud Technologies</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-lock"></i>
+            <span>Ethical Hacking</span>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-cisco"></i>
+            <span>Cisco Technologies</span>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-linux"></i>
+            <span>Linux Administration</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills-section page-content">
+      <h2 class="fade-in">Technical Skills</h2>
+      <div class="skills-container fade-in">
+        <div class="skill-category">
+          <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
+          <ul>
+            <li>React.js</li>
+            <li>Vue.js</li>
+            <li>HTML5 & CSS3</li>
+            <li>JavaScript (ES6+)</li>
+            <li>TypeScript</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3><i class="fas fa-server"></i> Backend</h3>
+          <ul>
+            <li>Node.js</li>
+            <li>Express</li>
+            <li>Python</li>
+            <li>Django</li>
+            <li>RESTful APIs</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3><i class="fas fa-shield-alt"></i> Security</h3>
+          <ul>
+            <li>Ethical Hacking</li>
+            <li>Penetration Testing</li>
+            <li>OWASP Top 10</li>
+            <li>Cryptography</li>
+            <li>SIEM Tools</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3><i class="fas fa-network-wired"></i> Networking</h3>
+          <ul>
+            <li>Cisco CCNA</li>
+            <li>TCP/IP</li>
+            <li>Firewalls</li>
+            <li>VPNs</li>
+            <li>Network Security</li>
+          </ul>
+        </div>
+      </div>
+      <h2 class="fade-in" style="margin-top: 4rem;">Soft Skills</h2>
+      <div class="skills-container fade-in">
+        <div class="skill-category">
+          <h3><i class="fas fa-users"></i> Interpersonal</h3>
+          <ul>
+            <li>Communication</li>
+            <li>Teamwork</li>
+            <li>Adaptability</li>
+            <li>Problem-Solving</li>
+            <li>Client Relations</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3><i class="fas fa-brain"></i> Professional</h3>
+          <ul>
+            <li>Critical Thinking</li>
+            <li>Time Management</li>
+            <li>Attention to Detail</li>
+            <li>Leadership</li>
+            <li>Continuous Learning</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects page-content">
+      <h2 class="fade-in">Featured Projects</h2>
+      <div class="project-grid">
+        <div class="project-card fade-in">
+          <h3>Smart Water - SA</h3>
+          <p>Synthetic South African employment dataset (income > R50,000) used to analyze gender and race biases amid high unemployment and historical inequalities.</p>
+          <p><strong>Technologies:</strong> React, Node.js, MongoDB, Stripe API</p>
+          <p><strong>Impact:</strong>Built a logistic regression model on a synthetic employment dataset, applied bias mitigation, and used Python for analysis, reducing checkout fraud by 60%.</p>
+          <a href="https://View Notebook (Bias_Audit_Report_SA.ipynb)" class="btn">View Live Demo</a>
+          <a href="https://github.com/Nompil/Bias-Audit-Report-SA" class="btn">GitHub Repository</a>
+        </div>
+        
+        <div class="project-card fade-in">
+          <h3>AI Resume Builder</h3>
+          <p>A simple and interactive web-based resume creator designed to help users generate professional resumes efficiently..</p>
+          <p><strong>Technologies:</strong> HTML5, JavaScript, CSS3, Gemini API</p>
+          <p><strong>Impact:</strong> Masikhule Resume Creator Accuracy: 85–90% – highly accurate in formatting and structure, but relies on user input for content correctness and optimization.</p>
+            <a href="https://skelletor147.github.io/website-demo/" class="btn" target="_blank">View Live Demo</a>
+          <a href="https://github.com/Mphefemulo/Masikhule.git" class="btn" target="_blank">GitHub Repository</a>
+        </div>
+        
+        <div class="project-card fade-in">
+          <h3>AI Study Buddy</h3>
+          <p>AI Study Buddy is a browser-based web app that uses generative AI to make studying interactive and personalized. It’s serverless, ensuring privacy, speed, and simple deployment.</p>
+          <p><strong>Technologies:</strong> HTML, JavaScript, CSS, Google Gemini API</p>
+          <p><strong>Impact:</strong> Reduced manual testing time by 80%</p>
+            <a href="https://ai-study-buddy-701021958461.us-west1.run.app/" class="btn" target="_blank">View Live Demo</a>
+            <a href="https://github.com/Masikhule-Solutions/ai-study-buddy" class="btn" target="_blank">GitHub Repository</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume" class="resume page-content">
+      <h2 class="fade-in">Professional Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item fade-in">
+          <div class="timeline-date">2025 - Present</div>
+          <h3>IT ADS4 Candidate - CAPACITI .</h3>
+          <ul>
+            <li>Led team of 5 developers building enterprise applications</li>
+            <li>Attended a 2-month intensive boot camp, collaborating on real-world projects and problem-solving activities.</li>
+            <li>Completed Coursera certificates in Deep Learning AI and Professional Development to strengthen technical and career skills.</li>
+            <li>Gained hands-on experience applying AI concepts to practical challenges, enhancing teamwork and project execution abilities.</li>
+          </ul>
+        </div>
+        
+        <div class="timeline-item fade-in">
+          <div class="timeline-date">2024 - 2025</div>
+          <h3>Project / Network Engineer Trainee - Zensar Technologies.</h3>
+          <ul>
+            <li>Network Management, Configure and maintain core infrastructure (Cisco ,
+TP-Link, Mikrotic) WAN/LAN access control.</li>
+            <li>Implement Responsive Web Design</li>
+            <li>Configure port security, SSH access, and strong passwords on switches and
+routers.</li>
+            <li>Create a simulated network using Packet Tracer or real devices. Include DHCP,
+DNS (simulated), and multiple VLANs.</li>
+          </ul>
+        </div>
+        
+        <div class="timeline-item fade-in">
+          <div class="timeline-date">2023 - 2024</div>
+          <h3>IT Technicain - Sabi Sand Nature Reserve</h3>
+          <ul>
+            <li>Deliver First-Level Internal helpdesk Technical Support: Respond to calls and
+prompt effective technical assistance to end-users, addressing their inquiries
+and troubleshooting issues with hardware, software, and network connectivity.</li>
+            <li>providing network printer support, meeting with staff to provide one-on-one
+technical assistance using AnyDesk as requested.</li>
+            <li>Performing clean Installation and upgrades of Windows 7,10, 11 and configure
+TCP/IP network settings.</li>
+            <li>CCTV - Hikvision and Axis Communications</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="fade-in">Education & Certifications</h2>
+      <div class="timeline fade-in">
+        <div class="timeline-item">
+          <div class="timeline-date">2021</div>
+          <h3>Diploma in Information Technology - Richfield Graduate Institute of Technology</h3>
+          <p>Graduated with Diploma</p>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">2022</div>
+          <h3>Linux Network Administrator</h3>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">2024</div>
+          <h3>Cisco Certified Network Associate (CCNA)</h3>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2024</div>
+          <h3>Certified entry-Level Python Programmer</h3>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">2024</div>
+          <h3>NDG Linux Unhatched</h3>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2025</div>
+          <h3>Introduction to Cybersecurity</h3>
+        </div>
+      </div>
+
+
+      <a href="resume.pdf" class="btn fade-in" download>Download Full Resume</a>
+    </section>
+
+    <section id="references" class="references page-content">
+        <h2 class="fade-in">References</h2>
+        <p class="fade-in" style="text-align: center; margin-bottom: 2rem;">Professional contacts available upon request.</p>
+        <div class="reference-grid">
+            <div class="reference-card fade-in">
+                <div class="ref-icon"><i class="fas fa-user-tie"></i></div>
+                <h4 class="ref-name">Mr Akani Mbondzisa</h4>
+                <p class="ref-title">Supervisor - Sabi Sand Nature Reserve</p>
+                <p class="ref-contact"><i class="fas fa-phone"></i> +27 82 766 7362</p>
+            </div>
+            <div class="reference-card fade-in">
+                <div class="ref-icon"><i class="fas fa-user-tie"></i></div>
+                <h4 class="ref-name">Miss Phumzile Mbajwa</h4>
+                <p class="ref-title">Line Manger - Zensar Technologies</p>
+                <p class="ref-contact"><i class="fas fa-phone"></i> +27 82 764 9910</p>
+            </div>
+            <div class="reference-card fade-in">
+                <div class="ref-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <h4 class="ref-name">Miss Ntombiyelanga Moyo</h4>
+                <p class="ref-title">Instructor - Go Fourth Learning</p>
+                <p class="ref-contact"><i class="fas fa-phone"></i> +27 66 992 339</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact page-content">
+      <h2 class="fade-in">Get In Touch</h2>
+      <p class="fade-in">Feel free to reach out for collaborations or just to say hello!</p>
+      
+      <form class="contact-form fade-in" action="https://formspree.io/f/xpwjbgao" method="POST">
+        <label for="contact-name">Your Name</label>
+        <input type="text" id="contact-name" name="name" placeholder="Your Name" required aria-required="true">
+        
+        <label for="contact-email">Your Email</label>
+        <input type="email" id="contact-email" name="_replyto" placeholder="Your Email" required aria-required="true">
+        
+        <label for="contact-message">Your Message</label>
+        <textarea id="contact-message" name="message" placeholder="Your Message" required aria-required="true"></textarea>
+        
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+      
+      <div class="social-links fade-in">
+        <a href="https://www.linkedin.com/in/godlove-nyathi-00a414209/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/godlove" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://twitter.com/godlove" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="mailto:mphefemulo@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+      
+      <div class="contact-info fade-in">
+        <p><i class="fas fa-phone"></i> +27 818631763</p>
+        <p><i class="fas fa-envelope"></i> mphefemulo@gmail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Johannesburg, South Africa</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Typewriter effect
+    document.addEventListener('DOMContentLoaded', function() {
+      const text = "Network Engineer | IT Engineer | Aspiring Cyber Security Analyst";
+      const typewriterElement = document.getElementById('typewriter');
+      let i = 0;
+      let speed = 70; // typing speed in milliseconds
+      
+      function typeWriter() {
+        if (i < text.length) {
+          typewriterElement.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        }
+      }
+      
+      if (document.getElementById('home').classList.contains('active')) {
+        typeWriter();
+      }
+      
+      // Page Navigation System
+      const pages = document.querySelectorAll('.page-content');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const aboutBtn = document.getElementById('about-btn');
+      const detailedAboutBtn = document.getElementById('detailed-about-btn');
+      
+      function showPage(pageId) {
+        pages.forEach(page => {
+          page.classList.remove('active');
+        });
+        
+        const activePage = document.getElementById(pageId);
+        if (activePage) {
+          activePage.classList.add('active');
+          
+          if (pageId === 'home' && typewriterElement.innerHTML.length < text.length) {
+            i = 0;
+            typewriterElement.innerHTML = '';
+            typeWriter();
+          }
+        }
+        
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('data-page') === pageId) {
+            link.classList.add('active');
+          }
+        });
+        
+        window.scrollTo(0, 0);
+      }
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const pageId = this.getAttribute('data-page');
+          showPage(pageId);
+          history.pushState(null, null, `#${pageId}`);
+        });
+      });
+      
+      if (aboutBtn) {
+        aboutBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          showPage('about');
+          history.pushState(null, null, '#about');
+        });
+      }
+      
+      if (detailedAboutBtn) {
+        detailedAboutBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          showPage('about-detailed');
+          history.pushState(null, null, '#about-detailed');
+        });
+      }
+      
+      window.addEventListener('popstate', function() {
+        const hash = window.location.hash.replace('#', '');
+        if (hash) {
+          showPage(hash);
+        } else {
+          showPage('home');
+        }
+      });
+      
+      const initialHash = window.location.hash.replace('#', '');
+      if (initialHash && document.getElementById(initialHash)) {
+        showPage(initialHash);
+      } else {
+          showPage('home');
+      }
+
+      // Animation on scroll
+      const fadeElements = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      }, {threshold: 0.1});
+
+      fadeElements.forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>
