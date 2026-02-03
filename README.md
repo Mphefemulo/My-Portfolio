@@ -38,7 +38,7 @@ Clone the repository to your local machine:
 
 Bash
 
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/mphefemulo/my-portfolio.git
 Navigate to the project directory:
 
 Bash
